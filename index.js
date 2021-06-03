@@ -18,16 +18,16 @@ e) If fuelLevel is below 1000 OR engineTemperature is above 3500 OR engineIndica
 f) Otherwise, print "Fuel and engine status pending..." */
 
 // Code 5a - 5f here:
-if (fuelLevel > 2000 && engineTemperature <= 2500) {
-  console.log("Full tank.\nEngines good.");
-} else if (fuelLevel > 10000 && engineTemperature <= 2500) {
-  console.log("Fuel level above 50%.\nEngines good.");
-} else if (fuelLevel > 5000 && engineTemperature <= 2500) {
-  console.log("Fuel level above 25%.\nEngines good.");
+if (fuelLevel < 1000 || engineTemperature > 3500 || engineIndicatorLight === "red blinking") {
+  console.log("ENGINE FAILURE IMMINENT!");
 } else if (fuelLevel <= 5000 || engineTemperature > 2500) {
   console.log("Check fuel level.\nEngines running hot.");
-} else if (fuelLevel < 1000 || engineTemperature > 3500) {
-  console.log("ENGINE FAILURE IMMINENT!");
+} else if (fuelLevel > 5000 && engineTemperature <= 2500) {
+  console.log("Fuel level above 25%.\nEngines good.");
+} else if (fuelLevel > 10000 && engineTemperature <= 2500) {
+  console.log("Fuel level above 50%.\nEngines good.");
+} else if (fuelLevel > 2000 && engineTemperature <= 2500) {
+  console.log("Full tank.\nEngines good.");
 } else {
   console.log("Fuel and engine status pending...");
 }
