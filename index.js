@@ -1,7 +1,7 @@
-let engineIndicatorLight = 'red blinking';
+let engineIndicatorLight = !'red blinking';
 let fuelLevel = 21000;
 let engineTemperature = 1200;
-
+let commandOverride = true;
 
 /* 5) Implement the following checks using if/else if/else statements:
 
@@ -39,3 +39,9 @@ if (fuelLevel < 1000 || engineTemperature > 3500 || engineIndicatorLight === "re
 /* 6) b) Code the following if/else check:
 If fuelLevel is above 20000 AND engineIndicatorLight is NOT red blinking OR commandOverride is true print "Cleared to launch!" Else print "Launch scrubbed!" */
 
+//6 Final bit of fun.
+if (fuelLevel > 20000 && engineIndicatorLight === !"red blinking" || commandOverride === true) {
+  console.log("Cleared for launch!");
+} else {
+  console.log("Launch scrubbed!");
+}
